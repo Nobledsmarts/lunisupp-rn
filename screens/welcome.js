@@ -1,4 +1,4 @@
-import { Image, Center, Heading, Text, Stack, Box, TextInput, Button } from "native-base"
+import { Image, Center, View, Heading, Text, Stack, Box, TextInput, Button } from "native-base"
 import { NavigationHelpersContext, useNavigation } from '@react-navigation/native';
 import logo from '../assets/lunisupp.png';
 import symbol from '../assets/logo-symbol.png';
@@ -26,9 +26,11 @@ export default function Welcome() {
                         <Text fontWeight="medium" fontSize="2xl">with your website visitors</Text> 
                 </Stack>
                 <Stack direction="column" flexBasis="25%" space={4}>
-                    <Button rounded={50} px={100} __text={{ margin : 'auto', color : '#e50' }}  size="lg"  isLoading={false} isLoadingText="Submitting" onPress={ () => navigation.push('login')}>
+                <View style={{overflow: 'hidden'}} rounded={50}>
+                    <Button  android_ripple={{ color: 'cyan' }} rounded={50} px={100} __text={{ margin : 'auto', color : '#e50' }}  size="lg"  isLoading={false} isLoadingText="Submitting" onPress={ () => navigation.push('login')}>
                         Log In
                     </Button>
+                    </View>
                     <Button rounded={50} bold variant="outline" px={100} _text={{ margin : 'auto', colo : '#fff' }}  size="lg"  isLoading={false} isLoadingText="Submitting" varian="subtle" color="primary">
                         Create an account
                     </Button>
