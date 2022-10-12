@@ -25,7 +25,7 @@ export const screenOptions = ({ route }) => ({
     },
     headerStyle : {
     backgroundColor : 'red',
-    height : 120,
+    // height : 120,
     // marginTop: Platform.OS == "ios" ? 20 : 0
     },
 })

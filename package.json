@@ -9,6 +9,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo/html-elements": "^0.2.0",
     "@react-native-async-storage/async-storage": "~1.17.3",
     "@react-navigation/bottom-tabs": "^6.3.2",
     "@react-navigation/drawer": "^6.4.3",
@@ -19,6 +20,10 @@
     "@types/react-native": "^0.69.5",
     "expo": "~45.0.0",
     "expo-device": "~4.2.0",
+    "expo-document-picker": "~10.2.1",
+    "expo-file-system": "~14.0.0",
+    "expo-image-picker": "~13.1.1",
+    "expo-intent-launcher": "~10.2.0",
     "expo-linear-gradient": "~11.3.0",
     "expo-notifications": "~0.15.4",
     "expo-splash-screen": "~0.15.1",
@@ -32,10 +37,12 @@
     "react-native-safe-area-context": "4.2.4",
     "react-native-screens": "~3.11.1",
     "react-native-svg": "12.3.0",
+    "react-native-swipe-list-view": "^3.2.9",
     "react-native-web": "0.17.7",
     "react-redux": "^8.0.2",
     "react-scripts": "^5.0.1",
-    "redux-persist": "^6.0.0"
+    "redux-persist": "^6.0.0",
+    "use-file-picker": "^1.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

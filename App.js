@@ -11,7 +11,16 @@ import Index from './screens/index';
 import store from './store';
 import auth from './store/auth';
 import theme from './theme'
-import Profile from './screens/Profile/Index'
+import { Box } from 'native-base';
+
+import { StatusBar } from 'expo-status-bar';
+// import Profile from './screens/Profile/Index'
+import ProfileNavigator from './screens/Profile/ProfileNavigator';
+
+import Profile from './screens/Profile/Profile';
+import ChangePassword from './screens/Profile/ChangePassword';
+import EditProfile from './screens/Profile/EditProfile';
+
 
 
 
@@ -26,7 +35,11 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
     return (
+      <>
       <NativeBaseProvider theme={theme()}>
+        <StatusBar bg="#3700B3" barStyle="light-content" />
+        <Box safeAreaTop bg="violet.600" />
+      
         <Provider store={appStore}>
           <NavigationContainer>
             <Stack.Navigator>
@@ -34,11 +47,22 @@ const App = () => {
               <Stack.Screen name="Login" component={Login} options={{ headerShown :false }}/>
               <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown :false }}/>
               <Stack.Screen name="Index" component={Index} options={{ headerShown :false }}/>
-              <Stack.Screen name="Profile" component={Profile} options={{ headerShown :true }}/>
+
+
+              {/* Profile  screens*/}
+              <Stack.Group screenOptions={{ presentation: 'card' }}>
+                <Stack.Screen name="Profile" component={Profile} options={{ headerShown :true }}/>
+                <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown :true }}/>
+                <Stack.Screen name="ChangePassword" component={ChangePassword} options={{ headerShown :true }}/>
+
+              </Stack.Group>
+              {/* <Stack.Screen name="Profile" component={Profile} options={{ headerShown :true }}/> */}
+              {/* <Stack.Screen name="Profile" component={ProfileNavigator} options={{ headerShown :true }}/> */}
             </Stack.Navigator>
           </NavigationContainer>
         </Provider>
       </NativeBaseProvider>
+      </>
     )
 };
 

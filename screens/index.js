@@ -6,18 +6,22 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 
 import Settings from './Settings';
+// import Conversations from './Conversations';
+// import Conversations from './Conversatio';
 import Conversations from './Conversations';
 import Visitors from './Visitors';
 import Home from './Home';
-import Profile from './Profile/Index';
+import Profile from './Profile/Profile';
 import  TabBar  from '../components/Tab/TabBar';
 import  NavigatorScreenOptions  from '../components/Tab/NavigatorScreenOptions';
 import HeaderLeft from '../components/HeaderLeft';
 import HomeHeaderRight from './Home/HomeHeaderRight';
 import ConversationsHeaderRight from './Conversations/ConversationsHeaderRight';
 
+import ProfileNavigator from './Profile/ProfileNavigator';
 
 
+// C:\Program Files\Java\jre1.8.0_341\bin\javaw.exe
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -26,13 +30,15 @@ export default function App() {
   return (
     
       <Tab.Navigator tabBar={TabBar} screenOptions={NavigatorScreenOptions} _sceneContainerStyle={{ padding : '0px' }}>
-        <Tab.Screen bg="amber.200" name="Home" component={Profile}  options={{
+        <Tab.Screen bg="amber.200" name="Home" component={Conversations}  options={{
           headerLeft : HeaderLeft,
-          headerRight : HomeHeaderRight
+          headerRight : HomeHeaderRight,
+          headerShadowVisible : true,
           }}/>
         <Tab.Screen name="Conversations" component={Conversations} options={{
           headerLeft : HeaderLeft,
-          headerRight : ConversationsHeaderRight
+          headerRight : ConversationsHeaderRight,
+          headerShadowVisible : true,
           }}/>
         <Tab.Group screenOptions={{
             headerLeft : HeaderLeft,

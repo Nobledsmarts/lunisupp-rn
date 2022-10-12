@@ -7,11 +7,11 @@ import LoadingScreen from './LoadingScreen.js';
 
 const LazyContent = React.lazy(() => { 
   return new Promise(resolve => setTimeout(resolve, 5 * 1000))
-    .then(() => import('./Conversations/Index.js') )
+    .then(() => import('./Conversations/index.js') )
 });
 
 
-export default function Conversations() {
+export default function Conversati() {
   
   return (
     <>

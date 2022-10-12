@@ -3,7 +3,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
   
 
 export const ListItem = ({ iconType,  iconName, iconBg, label, labelValue = "", isFirstChild = false, isToggle = false, onToggle, isChecked = false,  isLastChild = false, showArrow = true, showIcon = true, subLabel = "", ...props}) => {
-    const itemRadius = 8;
+    const itemRadius = 10;
 
     return (
         <Pressable  h="60px" bg="light.100" roundedTopLeft={ isFirstChild ? itemRadius : 0} roundedTopRight={ isFirstChild ? itemRadius : 0} roundedBottomLeft={ isLastChild ? itemRadius : 0} roundedBottomRight={ isLastChild ? itemRadius : 0} borderColor="muted.300" borderBottomWidth={!isLastChild ? "0.5px" : "0px"} android_ripple={{ color: '#00000009' }} {...props}>
