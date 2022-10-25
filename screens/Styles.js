@@ -1,4 +1,57 @@
-export const screenOptions = ({ route }) => ({
+export const AppStyle  = {
+    typography : {
+      headline4 : {
+        fontSize : '34px',
+        fontWeight : 'normal',
+        letterSpacing : '0.25px'
+      },
+      headline5 : {
+        fontSize : '24px',
+        fontWeight : 'normal',
+        letterSpacing : '0px'
+      },
+      headline6 : {
+        fontSize : '20px',
+        fontWeight : 'medium',
+        letterSpacing : '0.15px'
+      },
+      subtitle1 : {
+        fontSize : '16px',
+        fontWeight : 'normal',
+        letterSpacing : '0.15px'
+      },
+      subtitle2 : {
+        fontSize : '14px',
+        fontWeight : 'medium',
+        letterSpacing : '0.1px'
+      },
+      body1 : {
+        fontSize : '14px',
+        fontWeight : 'normal',
+        letterSpacing : '0.25px'
+      },
+      
+      body2 : {
+        fontSize : '16px',
+        fontWeight : 'normal',
+        letterSpacing : '0.5px'
+      },
+      button : {
+        fontSize : '14px',
+        fontWeight : 'medium',
+        letterSpacing : '1.25px'
+      },
+      caption : {
+        fontSize : '12px',
+        fontWeight : 'normal',
+        letterSpacing : '0.4px'
+      },
+      overline : {
+        fontSize : '10px',
+        fontWeight : 'normal',
+        letterSpacing : '1.5px'
+      },
+    },
     tabBarLabelStyle: {
       fontSize: 12,
       fontWeight : '500'
@@ -28,4 +81,4 @@ export const screenOptions = ({ route }) => ({
     // height : 120,
     // marginTop: Platform.OS == "ios" ? 20 : 0
     },
-})
+}

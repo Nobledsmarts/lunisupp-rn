@@ -14,7 +14,7 @@ import {View, Button, Spinner, NativeBaseProvider, ScrollView, Box, Text, Pressa
 import { SwipeListView, SwipeRow } from 'react-native-swipe-list-view';
 import { MaterialIcons, MaterialCommunityIcons, Ionicons, Entypo } from '@expo/vector-icons';
 
-import Actions from './Components/Actions';
+import Actions from './Actions';
 
 import { ActivityIndicator } from 'react-native';
 
@@ -22,7 +22,7 @@ import MockData from './MockData';
 
 import requestAPI from './Actions/requestAPI';
 
-import ConversationListItem from './Components/ConversationListItem';
+import ConversationListItem from './ConversationListItem';
 
 import RenderEmpty from './Components/RenderEmpty';
 import RenderFooter from './Components/RenderFooter';
@@ -106,12 +106,14 @@ export default () => {
             </Center>);
     }
     const fetchMoreChat = () => {
-
+      console.log(conversationModel.isListEnd, conversationModel.moreLoading);
       if(!conversationModel.isListEnd && !conversationModel.moreLoading){
         setPage(page + 1)
-        
+        console.log(page + 1);
+        // alert('setPage to be 1');
       }
-
+      // alert('reached');
+      // setAnimating(true);
     }
 
     const closeRow = (rowMap, rowKey) => {
@@ -122,7 +124,7 @@ export default () => {
 
    
     const onRowDidOpen = rowKey => {
-        console.log('This row opened', rowKey);
+        // console.log('This row opened', rowKey);
     };
 
 
@@ -134,14 +136,15 @@ return <Box>
         <Box justifyContent="center" alignItems="center" h="100%">
             <ActivityIndicator size='large' />
         </Box> 
-        : 
+        :
       <SwipeListView 
-        keyExtractor={(conversation) => conversation.id}
+        // swipeKey="id"
         useFlatList={true} 
         showsVerticalScrollIndicator={false} 
         data={conversationModel.data} 
-        renderItem={({item, index}) => <ConversationListItem data={item} index={index} deleteRow={DeleteRow} onOpen={onOpen} conversationModel={conversationModel}/>} 
-        renderHiddenItem={(data, rowMap) => <RenderHiddenItem changeConversationData={changeConversationData} conversationModel={conversationModel} rowMap={rowMap} data={data} deleteRow={DeleteRow} onOpen={onOpen}/>} 
+        renderItem={ (conversationModel) => ConversationListItem(conversationModel.data, 'id', conversationModel, DeleteRow, onOpen) } 
+        // renderItem={ (conversationModel) => <ConversationListItem item={conversationModel.data} deleteRow={DeleteRow} onOpen={onOpen} conversationModel={conversationModel}/>} \
+        renderHiddenItem={() => <RenderHiddenItem data={conversationModel.data} deleteRow={DeleteRow} onOpen={onOpen} />} 
         rightOpenValue={-160} 
         stopRightSwipe={-160}  
         onRowDidOpen={onRowDidOpen} 
@@ -157,5 +160,22 @@ return <Box>
     <Actions isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
     </Box>;
   
+
+    return (
+        <View style={styles.container}>  
+            <SwipeListView 
+                data={listData}
+                renderItem={ConversationListItem}
+                renderHiddenItem={RenderHiddenItem}
+                leftOpenValue={75}
+                rightOpenValue={-150}
+                previewRowKey={'0'}
+                previewOpenValue={-40}
+                previewOpenDelay={3000}
+                onRowDidOpen={onRowDidOpen}
+                disableRightSwipe={true}
+            />
+        </View>
+    );
 }
 

@@ -10,7 +10,7 @@ import Settings from './Settings';
 // import Conversations from './Conversatio';
 import Conversations from './Conversations';
 import Visitors from './Visitors';
-import Home from './Home';
+import Home from './Home/Home';
 import Profile from './Profile/Profile';
 import  TabBar  from '../components/Tab/TabBar';
 import  NavigatorScreenOptions  from '../components/Tab/NavigatorScreenOptions';
@@ -30,7 +30,7 @@ export default function App() {
   return (
     
       <Tab.Navigator tabBar={TabBar} screenOptions={NavigatorScreenOptions} _sceneContainerStyle={{ padding : '0px' }}>
-        <Tab.Screen bg="amber.200" name="Home" component={Conversations}  options={{
+        <Tab.Screen bg="amber.200" name="Home" component={Home}  options={{
           headerLeft : HeaderLeft,
           headerRight : HomeHeaderRight,
           headerShadowVisible : true,

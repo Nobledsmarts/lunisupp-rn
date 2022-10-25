@@ -20,6 +20,7 @@ import ProfileNavigator from './screens/Profile/ProfileNavigator';
 import Profile from './screens/Profile/Profile';
 import ChangePassword from './screens/Profile/ChangePassword';
 import EditProfile from './screens/Profile/EditProfile';
+import * as NavigationBar from 'expo-navigation-bar';
 
 
 
@@ -34,11 +35,14 @@ const appStore = configureStore({
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  NavigationBar.setBackgroundColorAsync("white");
+  // NavigationBar.setBorderColorAsync("red");
+  NavigationBar.setButtonStyleAsync("dark");
     return (
       <>
       <NativeBaseProvider theme={theme()}>
-        <StatusBar bg="#3700B3" barStyle="light-content" />
-        <Box safeAreaTop bg="violet.600" />
+        <StatusBar bg="fff" barStyle="dark-content" />
+        <Box safeAreaTop bg="#fff" />
       
         <Provider store={appStore}>
           <NavigationContainer>

@@ -60,13 +60,15 @@ export default ({ route }) => ({
       // const title = children.name;
         headerRight = <ConversationsHeaderRight/>
       } 
-      console.log(route);
+      // console.log(route);
 
       return (
-          <Box h="80px" bg="white" justifyContent="center" style={{
+          <Box h="80px" bg="#fff" zIndex={-1} justifyContent="center" style={{
             // borderBottomWidth: 0.2,
             borderBottomColor : '#e0f0f0',
+            position : "relative",
             elevation: 1,
+            
             }}>
             <Stack h="80px" alignItems="center" justifyContent="center" direction="row">
               <Stack flexBasis="50%" h="80px"  alignItems="center" justifyContent="flex-start" direction="row">

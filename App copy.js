@@ -2,6 +2,7 @@ import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 import React, { useState, useEffect, useRef } from 'react';
 import { Text, View, Button, Platform } from 'react-native';
+import { makeMutable } from 'react-native-reanimated';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -10,6 +11,7 @@ Notifications.setNotificationHandler({
     shouldSetBadge: false,
   }),
 });
+
 
 export default function App() {
   const [expoPushToken, setExpoPushToken] = useState('');
