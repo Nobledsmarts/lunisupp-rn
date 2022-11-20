@@ -10,7 +10,7 @@ import ItemBox from './Components/ItemBox';
 import PressableIcon from '../../components/PressableIcon';
 // import { Tooltip } from 'native-base';
 
-export default Home = () => {
+export default  () => {
    const [isOpen, setIsOpen] = useState(false);
    const { typography } = AppStyle;
   //  console.log(AppStyle);

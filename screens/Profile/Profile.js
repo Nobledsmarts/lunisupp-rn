@@ -63,7 +63,7 @@ export default ({ navigation }) => {
             <Box bg="#fff" h="100%" > 
                 <Stack p={4}>
                     <PresenceTransition mb={4} visible={!isOnline} initial={{ opacity: 0}} animate={{ opacity: 1,transition: { duration: 250} }}>
-                        <Box  mb={4} display={isOnline ? "none" : 'flex'} p={3} minH="80px" rounded={8}  _dark={{ bg : "green.700" }} bg={ colorScheme + ".100" } _text={{ color : "green.200" }}>
+                        <Box mb={4} display={isOnline ? "none" : 'flex'} p={3} minH="80px" rounded={8}  _dark={{ bg : "green.700" }} bg={ colorScheme + ".100" } _text={{ color : "green.200" }}>
                             <Stack direction="row" alignItems="center">
                                 <Icon size="20px" as={MaterialCommunityIcons} name="bell-outline" color={ colorScheme + ".400" } _dark={{
                                         color: "warmGray.50"
@@ -78,7 +78,7 @@ export default ({ navigation }) => {
                     <Pressable onPress={() => navigation.navigate('EditProfile')} mb={4} h="100px" bg="light.100" rounded={8} android_ripple={{ color: '#00000009' }}>
                         <Stack direction="row" p={5} h="100px" >
                             <Box  borderStyle="solid" borderWidth="2px" borderColor="red.50"  flexBasis="20%">
-                                <Pressable onPress={doUpload} android_ripple={{ color: '#00000009' }}>
+                                <Pressable  w="60px" h="60px"  onPress={doUpload} android_ripple={{ color: '#00000009' }}>
                                     <Box bg="blue.400" justifyContent="center" alignItems="center" w="60px" h="60px"  overflow="hidden" rounded={50}>
                                         <Icon size="6xl" marginBottom="-20px" as={MaterialCommunityIcons} name="account" color="blue.100" _dark={{
                                     color: "warmGray.50"

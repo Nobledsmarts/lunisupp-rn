@@ -1,6 +1,7 @@
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 import React, { useState, useEffect, useRef } from 'react';
+import { TouchableHighlightComponent } from 'react-native';
 import { Text, View, Button, Platform } from 'react-native';
 import { makeMutable } from 'react-native-reanimated';
 
@@ -11,7 +12,6 @@ Notifications.setNotificationHandler({
     shouldSetBadge: false,
   }),
 });
-
 
 export default function App() {
   const [expoPushToken, setExpoPushToken] = useState('');

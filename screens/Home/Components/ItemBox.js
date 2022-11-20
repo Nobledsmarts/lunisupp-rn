@@ -35,7 +35,7 @@ export const TooltipM = () => {
         </Center>
     )
 }
-
+   
 
 export const Custom = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -112,7 +112,7 @@ export const m = () => {
 
 function PopoverC() {
     return <Box h="60%" w="100%" alignItems="center">
-        <Popover  trigger={triggerProps => {
+        <Popover position="top" trigger={triggerProps => {
         return <Button {...triggerProps} shadow={2} colorScheme="danger">
                 Delete Customer
               </Button>;
@@ -145,3 +145,5 @@ export default () => {
         <PopoverC></PopoverC>
     )
 }
+
+          

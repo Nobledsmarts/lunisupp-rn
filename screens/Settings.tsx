@@ -8,7 +8,7 @@ import { MaterialCommunityIcons, Ionicons, FontAwesome, FontAwesome5, AntDesign 
 import { ListItem } from "../components/ListItem";
 
 
-export default Settings = () => {  
+export default () => {  
     return (
       <ScrollView bg="#fff"  showsVerticalScrollIndicator={false}>
          <Box bg="#fff" > 
